@@ -35,7 +35,7 @@ def snowman(snowman_word):
             # Only record a wrong guess once
             if user_input not in wrong_guesses_list:
                 wrong_guesses_list.append(user_input)
-            # print(f"Wrong guesses: {wrong_guesses_list}")
+            print(f"Wrong guesses: {wrong_guesses_list}")
 
         # Check win condition
         if is_word_guessed(snowman_word, correct_letter_guess_statuses):
@@ -43,9 +43,9 @@ def snowman(snowman_word):
             return # stop game immediately
 
         if len(wrong_guesses_list) >= SNOWMAN_MAX_WRONG_GUESSES:
-            print_snowman_graphic(len(wrong_guesses_list))
             print(f"Sorry, you lose! The word was {snowman_word}")
             return
+        print_snowman_graphic(len(wrong_guesses_list))
 
 
 def print_snowman_graphic(wrong_guesses_count):
